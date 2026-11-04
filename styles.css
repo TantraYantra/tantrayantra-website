@@ -786,7 +786,7 @@ details[open] .faq-plus::after{transform:rotate(90deg);opacity:0}
   .hero-art{justify-content:center;align-items:center;min-height:0;margin-top:26px;padding-bottom:16px}
   .product-flag{align-self:center}
   .app-shot{transform:none;width:min(100%,600px)}
-  .chip-a{left:0}
+  .float-chip{display:none}
   .about-grid{grid-template-columns:1fr;gap:34px}
   .about-copy{max-width:640px}
   .about-stats{max-width:600px}
