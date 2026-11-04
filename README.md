@@ -1,22 +1,52 @@
 # TantraYantra Website
 
-A responsive, static website for TantraYantra.
+The public home of **TantraYantra** and **PeopleLens** — a free, local-first
+photo library for Windows with on-device face recognition.
+
+Live at: <https://tantrayantra.github.io/tantrayantra-website/>
 
 ## Files
-- `index.html` — page structure and content
-- `styles.css` — responsive visual styling
-- `script.js` — mobile navigation and footer year
-- `assets/` — approved TantraYantra branding and PeopleLens logo
+
+| File | Purpose |
+|---|---|
+| `index.html` | Single-page structure, copy, download links, FAQ, JSON-LD |
+| `styles.css` | Premium dark theme, responsive layout, motion |
+| `script.js` | Mobile navigation, sticky header, FAQ behaviour, scroll reveal |
+| `assets/` | Approved TantraYantra and PeopleLens brand artwork |
+| `robots.txt` | Search-engine directives |
+| `sitemap.xml` | Single-page sitemap |
+
+## Download link
+
+The main call to action uses GitHub's constant "latest release" URL:
+
+```text
+https://github.com/TantraYantra/peoplelens/releases/latest/download/PeopleLens-Setup.exe
+```
+
+The release asset must stay named `PeopleLens-Setup.exe`. Publishing a new
+GitHub release updates the download automatically; no website change is needed.
+
+## Edit the page
+
+- **Download buttons:** search for `releases/latest/download` in `index.html`.
+- **Version and size:** search for `v1.0.0`, `84 MB`, and `Windows 11 x64`.
+- **FAQ:** edit the `<details>` blocks near the bottom of `index.html`.
+- **Brand colours:** the design tokens are at the top of `styles.css`.
 
 ## Publish with GitHub Pages
-1. Upload the contents of this folder to the root of the `TantraYantra/tantrayantra-website` repository.
-2. Open repository **Settings → Pages**.
-3. Under Build and deployment, choose **Deploy from a branch**.
-4. Select branch `main` and folder `/ (root)`, then Save.
-5. After deployment, the site should be available at:
-   `https://tantrayantra.github.io/tantrayantra-website/`
 
-The contact call-to-action currently points to the TantraYantra GitHub organisation because a public contact email has not been supplied.
+1. Commit the updated files to the `main` branch of
+   `TantraYantra/tantrayantra-website`.
+2. GitHub Pages builds from `main` at the repository root.
+3. The site appears at
+   <https://tantrayantra.github.io/tantrayantra-website/>.
 
-## PeopleLens branding
-The PeopleLens showcase uses the exact horizontal `peoplelens_logo.png` asset bundled in the verified PeopleLens desktop release ZIP, copied unchanged into `assets/peoplelens-logo.png`.
+No build step, package manager, or framework is required.
+
+## Brand and licensing
+
+The PeopleLens and TantraYantra names, logos, and icons are brand assets and
+are not covered by the MIT License of the application source. The PeopleLens
+source code and licence are at
+<https://github.com/TantraYantra/peoplelens>.
