@@ -1,4 +1,4 @@
-/* PeopleLens site — small, dependency-free enhancements */
+/* DrishtiX site — small, dependency-free enhancements */
 (function () {
   "use strict";
 
