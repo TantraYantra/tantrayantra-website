@@ -1,6 +1,6 @@
 /* =========================================================
-   DrishtiX — TantraYantra
-   Premium single-page site
+   TantraYantra
+   Independent studio site
    ========================================================= */
 
 :root{
@@ -842,6 +842,12 @@ details[open] .faq-plus::after{transform:rotate(90deg);opacity:0}
   font-size:.93rem;
   line-height:1.66;
 }
+
+/* ---------- social links ---------- */
+.social-links a{
+  font-size:.84rem;color:#c3ccdc;transition:color .25s var(--ease);
+}
+.social-links a:hover{color:#fff}
 
 /* =========================================================
    Responsive
