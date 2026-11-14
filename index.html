@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>TantraYantra — Independent Technology Studio</title>
+
+  <meta name="description" content="TantraYantra is an independent technology and product studio founded by Abir Agarwal. We build local-first, privacy-respecting software with dark editorial design, aurora systems, and on-device AI.">
+  <meta name="author" content="Abir Agarwal">
+  <meta name="keywords" content="TantraYantra, Abir Agarwal, independent technology studio, local-first software, privacy respecting software, DrishtiX">
+
+  <link rel="canonical" href="https://tantrayantra.github.io/tantrayantra-website/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital,opsz@0,9..100;1,9..100&family=Space+Grotesk:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tantrayantra.github.io/tantrayantra-website/">
+  <meta property="og:title" content="TantraYantra — Independent Technology Studio">
+  <meta property="og:description" content="TantraYantra is an independent technology and product studio founded by Abir Agarwal. We build local-first, privacy-respecting software with dark editorial design, aurora systems, and on-device AI.">
+  <meta property="og:site_name" content="TantraYantra">
+  <meta property="og:image" content="https://tantrayantra.github.io/tantrayantra-website/assets/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@tantrayantra">
+  <meta name="twitter:title" content="TantraYantra — Independent Technology Studio">
+  <meta name="twitter:description" content="TantraYantra is an independent technology and product studio founded by Abir Agarwal.">
+
+  <style>
+    :root {
+      --bg: #050507;
+      --surface: #0a0a0d;
+      --text: #eaeaea;
+      --text-muted: #8a8a92;
+      --accent: #7c3aed;
+      --accent-glow: rgba(124, 58, 237, 0.35);
+      --border: rgba(255, 255, 255, 0.08);
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-sans: 'DM Sans', sans-serif;
+      --font-serif: 'Instrument Serif', serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Aurora / Grid Background --- */
+    #canvas-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* --- Navigation --- */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      padding: 1.5rem 5vw;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-toggle { display: none; font-size: 1.5rem; color: var(--text); cursor: pointer; }
+
+    /* --- Sections --- */
+    .section { padding: 120px 5vw; position: relative; }
+
+    .section-dark {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    /* --- Hero --- */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; }
+
+    .hero-content { max-width: 700px; }
+
+    .hero-kicker {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title .serif {
+      font-family: var(--font-serif);
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 60ch;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--text);
+      color: var(--bg);
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .cta-button:hover { transform: translateY(-2px); background: var(--accent); color: #fff; }
+
+    .cta-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      margin-left: 1rem;
+    }
+
+    .cta-outline:hover { background: rgba(255,255,255,0.05); }
+
+    /* --- Work Grid --- */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .work-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .work-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+
+    .work-card-media {
+      width: 100%; height: 180px;
+      background: linear-gradient(135deg, #1a1a1e, #0f0f12);
+      border-radius: 8px; margin-bottom: 1.5rem;
+      border: 1px dashed var(--border);
+    }
+
+    .work-card-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .work-card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .work-card-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* --- About --- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.1rem; }
+
+    .about-stats { display: flex; flex-direction: column; gap: 2rem; }
+
+    .stat { text-align: right; }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-display); }
+
+    /* --- Contact --- */
+    .contact-intro { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.1rem; }
+
+    .socials { display: flex; gap: 2rem; margin-top: 2rem; }
+    .socials a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+    }
+    .socials a:hover { color: var(--text); }
+
+    /* --- Footer --- */
+    footer {
+      padding: 3rem 5vw;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--font-display);
+    }
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute; top: 100%; left: 0; width: 100%;
+        background: var(--surface);
+        flex-direction: column; padding: 2rem 5vw; gap: 1.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.active { display: flex; }
+      .nav-toggle { display: block; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .section { padding: 80px 5vw; }
+      .hero-title { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">TantraYantra</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-toggle" aria-label="Menu">☰</div>
+  </nav>
+
+  <!-- 3D Canvas Background Placeholder (Three.js can be added later) -->
+  <div id="canvas-container"></div>
+
+  <!-- Main Content -->
+  <main>
+    <section id="hero" class="section">
+      <div class="hero-content">
+        <span class="hero-kicker">Independent Technology Studio</span>
+        <h1 class="hero-title">
+          <span class="serif">Tantra</span>Yantra
+        </h1>
+        <p class="hero-subtitle">Founded by Abir Agarwal. Building local-first, privacy-respecting software. Dark editorial design. Aurora systems.</p>
+        <a href="#work" class="cta-button">Explore Work</a>
+        <a href="#about" class="cta-button cta-outline">About the Founder</a>
+      </div>
+    </section>
+
+    <section id="work" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title serif">Selected Work</h2>
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-card-media"></div>
+            <div class="work-card-info">
+              <h3 class="work-card-title">DrishtiX</h3>
+              <p class="work-card-desc">Local-first photo library with on-device face recognition. Windows desktop app by TantraYantra.</p>
+              <a href="#" class="work-card-link">View Case Study →</a>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-card-media"></div>
+            <div class="work-card-info">
+              <h3 class="work-card-title">Next Product</h3>
+              <p class="work-card-desc">In development. A new TantraYantra product.</p>
+              <a href="#" class="work-card-link">Coming Soon →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2 class="section-title serif">About TantraYantra</h2>
+          <p>TantraYantra is an independent technology and product studio founded by <strong>Abir Agarwal</strong>. We build software that respects the user's device, data, and attention—no unnecessary cloud dependencies, no dark patterns.</p>
+          <p>Our design system is rooted in dark editorial aesthetics: aurora backgrounds, grid structures, and a typographic voice combining Space Grotesk, DM Sans, and Instrument Serif.</p>
+          <p>Currently shipping <strong>DrishtiX</strong>, a free local-first photo library for Windows. More products in development.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Product in market</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Telemetry trackers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Local-first</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title serif">Get in Touch</h2>
+        <p class="contact-intro">TantraYantra is available for select projects and collaborations.</p>
+        <a href="mailto:hello@tantrayantra.github.io" class="cta-button cta-outline">hello@tantrayantra.com</a>
+        <div class="socials">
+          <a href="https://github.com/TantraYantra" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://twitter.com/tantrayantra" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>&copy; 2026 TantraYantra. All rights reserved.</div>
+      <div>Founded by Abir Agarwal · Hosted on GitHub Pages</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => links.classList.toggle('active'));
+  </script>
+
+  <!-- Structured Data for SEO & AI Overviews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://tantrayantra.github.io/tantrayantra-website/#organization",
+        "name": "TantraYantra",
+        "url": "https://tantrayantra.github.io/tantrayantra-website/",
+        "description": "Independent technology and product studio building local-first, privacy-respecting software.",
+        "founder": {
+          "@id": "https://tantrayantra.github.io/tantrayantra-website/#founder"
+        },
+        "sameAs": [
+          "https://github.com/TantraYantra",
+          "https://twitter.com/tantrayantra",
+          "https://linkedin.com/company/tantrayantra"
+        ],
+        "logo": "https://tantrayantra.github.io/tantrayantra-website/assets/logo.png"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://tantrayantra.github.io/tantrayantra-website/#founder",
+        "name": "Abir Agarwal",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@id": "https://tantrayantra.github.io/tantrayantra-website/#organization"
+        },
+        "url": "https://tantrayantra.github.io/tantrayantra-website/#founder",
+        "sameAs": [
+          "https://github.com/TantraYantra",
+          "https://linkedin.com/in/abir-agarwal",
+          "https://twitter.com/tantrayantra"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tantrayantra.github.io/tantrayantra-website/#website",
+        "url": "https://tantrayantra.github.io/tantrayantra-website/",
+        "name": "TantraYantra",
+        "publisher": {
+          "@id": "https://tantrayantra.github.io/tantrayantra-website/#organization"
+        },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
