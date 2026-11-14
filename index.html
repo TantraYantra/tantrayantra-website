@@ -82,7 +82,6 @@
       <a href="#work">Work</a>
       <a href="#privacy">Privacy</a>
       <a href="#faq">FAQ</a>
-      <a href="install-help.html">Download</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -133,6 +132,7 @@
         <div class="studio-mark-shape"></div>
         <div class="studio-note">Building what matters.</div>
       </div>
+      <img class="product-logo" src="assets/drishtix-logo.png?v=2" alt="DrishtiX logo" title="DrishtiX — Private Photo Library" width="1635" height="385" loading="lazy">
     </div>
   </section>
 
@@ -199,7 +199,7 @@
   <section class="section products-section" id="work">
     <div class="section-head">
       <div class="label">03 — WHAT WE'RE BUILDING</div>
-      <h2>Our work.<br> <em>In progress.</em></h2>
+      <h2>Our Products.<br> <em>Live.</em></h2>
     </div>
 
     <p class="work-lead">
@@ -210,16 +210,22 @@
 
     <div class="work-grid">
       <article class="work-card card-wide">
-        <div class="work-mark">D</div>
+        <div class="work-mark">
+          <img src="assets/drishtix-logo.png?v=2" alt="DrishtiX" width="32" height="32" loading="lazy" style="width:32px;height:32px;border-radius:8px">
+        </div>
         <h3>DrishtiX — Private Photo Library</h3>
         <p>
           A free, open-source photo library for Windows with on-device face
           recognition. Organize your photos and videos locally — no uploads,
-          no account, no telemetry. Download the installer and get started.
+          no account, no telemetry.
         </p>
-        <a class="btn btn-primary btn-lg" href="install-help.html" style="margin-top:18px;display:inline-block">
+        <a class="btn btn-primary btn-lg" href="https://github.com/TantraYantra/drishtix/releases/latest/download/DrishtiX-Setup.exe" style="margin-top:18px;display:inline-block">
           Download DrishtiX (Windows)
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
         </a>
+        <p style="margin-top:14px;font-size:.88rem;color:var(--dim)">
+          Direct download • Windows 11 x64 • MIT licensed
+        </p>
       </article>
       <article class="work-card">
         <div class="work-mark">●</div>
@@ -236,6 +242,105 @@
         <h3>Business Automation</h3>
         <p>Automation tools that streamline workflows without compromising privacy.</p>
       </article>
+    </div>
+  </section>
+
+  <!-- GET DRISHTIX -->
+  <section class="section download-section" id="download">
+    <div class="wrap">
+      <div class="section-head" style="max-width:760px">
+        <div class="label">GET DRISHTIX</div>
+        <h2>Download &amp; install<br> <em>Windows 11 x64.</em></h2>
+      </div>
+
+      <div class="bento" style="grid-template-columns:repeat(3,1fr);gap:20px">
+        <article class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg>
+          </div>
+          <h3>1. Download</h3>
+          <p>Click <strong>Download DrishtiX (Windows)</strong> above to get <code>DrishtiX-Setup.exe</strong> (≈88 MB).</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+          </div>
+          <h3>2. Run installer</h3>
+          <p>Double-click <code>DrishtiX-Setup.exe</code>. Installs per-user — no admin rights needed.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>3. Launch app</h3>
+          <p>DrishtiX appears in your Start Menu and on the Desktop. Open it and your library is ready.</p>
+        </article>
+      </div>
+
+      <div class="smartscreen" style="margin-top:40px;padding:30px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.03)">
+        <div class="label" style="margin-bottom:12px">IMPORTANT — WINDOWS SMARTSCREEN</div>
+        <h3 style="margin:0 0 12px">Windows may block the installer — here's what to do</h3>
+        <p style="color:var(--muted);margin:0 0 12px">
+          DrishtiX is an independent, open-source project. The installer is not yet
+          code-signed, so Windows SmartScreen may show a warning. This is expected
+          and does not mean the file is unsafe.
+        </p>
+        <ol style="color:var(--muted);line-height:1.8;margin:0 0 12px;padding-left:20px">
+          <li>Click <strong>"More info"</strong> (or "More options") on the warning dialog.</li>
+          <li>Click <strong>"Run anyway"</strong> at the bottom.</li>
+          <li>The installer will launch normally.</li>
+        </ol>
+        <p style="color:var(--dim);font-size:.9rem;margin:0">
+          Optional: verify the file hash against <code>SHA256SUMS.txt</code> on the
+          <a href="https://github.com/TantraYantra/drishtix/releases" target="_blank" rel="noreferrer" style="color:var(--cyan)">GitHub release page</a>.
+        </p>
+      </div>
+
+      <div class="how-to-use" style="margin-top:40px">
+        <div class="label" style="margin-bottom:12px">HOW TO USE</div>
+        <h3 style="margin:0 0 16px">Your photos, your way</h3>
+        <div class="showcase" style="grid-template-columns:1fr 1fr;gap:32px">
+          <div>
+            <h4 style="margin:0 0 8px">1. Add your photos</h4>
+            <p style="color:var(--muted);font-size:.95rem;margin:0 0 12px">
+              Open DrishtiX and scan any folder. Your original files are never moved or deleted.
+            </p>
+            <h4 style="margin:0 0 8px">2. Faces grouped automatically</h4>
+            <p style="color:var(--muted);font-size:.95rem;margin:0 0 12px">
+              On-device face recognition detects faces. Name each person, confirm or merge matches.
+            </p>
+            <h4 style="margin:0 0 8px">3. Everything stays local</h4>
+            <p style="color:var(--muted);font-size:.95rem;margin:0 0 12px">
+              No uploads, no account, no telemetry. All processing happens on your computer.
+            </p>
+          </div>
+          <div style="display:grid;place-items:center">
+            <div class="panel" style="max-width:400px">
+              <div class="panel-head"><b>QUICK START</b><span class="panel-badge">LOCAL-FIRST</span></div>
+              <div style="margin-top:14px">
+                <div class="match" style="margin-bottom:8px">
+                  <div class="face" style="--fa:linear-gradient(150deg,#0f766e,#134e4a)"></div>
+                  <div class="match-info"><strong>Scan folder</strong><small style="color:var(--dim)">Select any photo directory</small></div>
+                </div>
+                <div class="match" style="margin-bottom:8px">
+                  <div class="face" style="--fa:linear-gradient(150deg,#3730a3,#312e81)"></div>
+                  <div class="match-info"><strong>Name people</strong><small style="color:var(--dim)">Create profiles for faces found</small></div>
+                </div>
+                <div class="match" style="margin-bottom:8px">
+                  <div class="face" style="--fa:linear-gradient(150deg,#166534,#14532d)"></div>
+                  <div class="match-info"><strong>Browse library</strong><small style="color:var(--dim)">View photos by person or date</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--line)">
+          <p style="color:var(--dim);font-size:.9rem;margin:0">
+            <strong>Library location:</strong> <code>%LOCALAPPDATA%\TantraYantra\DrishtiX\</code>
+            <br>Your database and settings are stored here — back it up like any other folder.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
