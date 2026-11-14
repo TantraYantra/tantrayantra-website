@@ -865,14 +865,6 @@ details[open] .faq-plus::after{transform:rotate(90deg);opacity:0}
   align-self:flex-start;
 }
 
-/* ---------- product logo (hero) ---------- */
-.product-logo{
-  width:min(100%,340px);height:auto;margin-top:24px;
-  filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));
-  opacity:.95;transition:opacity .3s var(--ease);
-}
-.product-logo:hover{opacity:1}
-
 /* ---------- download section ---------- */
 .download-section{padding:clamp(60px,8vw,100px) 0}
 .smartscreen h3{margin:0 0 10px;font-family:var(--display);font-weight:600;font-size:1.1rem;color:#fff}
