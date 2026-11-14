@@ -861,6 +861,12 @@ details[open] .faq-plus::after{transform:rotate(90deg);opacity:0}
 .work-card.card-wide p{
   color:#cbd5e1;font-size:1rem;line-height:1.7;margin:0;
 }
+.work-card.card-wide .work-mark{
+  display:flex;justify-content:center;margin-bottom:8px;
+}
+.work-card.card-wide .work-mark img{
+  width:48px;height:48px;border-radius:12px;
+}
 .work-card.card-wide .btn{
   align-self:flex-start;
 }
