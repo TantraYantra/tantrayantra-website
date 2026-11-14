@@ -863,9 +863,14 @@ details[open] .faq-plus::after{transform:rotate(90deg);opacity:0}
 }
 .work-card.card-wide .work-mark{
   display:flex;justify-content:center;margin-bottom:8px;
-}
-.work-card.card-wide .work-mark img{
   width:48px;height:48px;border-radius:12px;
+  background:rgba(34,211,238,.08);
+  border:1px solid rgba(34,211,238,.2);
+  color:#67e8f9;
+  font-family:var(--display);
+  font-weight:700;
+  font-size:16px;
+  align-items:center;
 }
 .work-card.card-wide .btn{
   align-self:flex-start;
