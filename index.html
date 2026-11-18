@@ -1,450 +1,500 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#05070e">
+<meta name="color-scheme" content="dark">
+<title>TantraYantra | AI Solutions, Software & Web Development</title>
+<meta name="description" content="TantraYantra builds custom websites, applications, AI solutions and automation tools to solve real-world problems through technology.">
+<link rel="canonical" href="https://tantrayantra.github.io/tantrayantra-website/">
 
-  <title>TantraYantra — Independent Technology Studio</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TantraYantra">
+<meta property="og:title" content="TantraYantra | AI Solutions, Software & Web Development">
+<meta property="og:description" content="TantraYantra builds custom websites, applications, AI solutions and automation tools to solve real-world problems through technology.">
+<meta property="og:url" content="https://tantrayantra.github.io/tantrayantra-website/">
+<meta property="og:image" content="https://tantrayantra.github.io/tantrayantra-website/assets/og-tantrayantra.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TantraYantra — ideas into impact">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TantraYantra | AI Solutions, Software & Web Development">
+<meta name="twitter:description" content="TantraYantra builds custom websites, applications, AI solutions and automation tools to solve real-world problems through technology.">
+<meta name="twitter:image" content="https://tantrayantra.github.io/tantrayantra-website/assets/og-tantrayantra.png">
 
-  <meta name="description" content="TantraYantra is an independent technology and product studio founded by Abir Agarwal. We build local-first, privacy-respecting software with dark editorial design, aurora systems, and on-device AI.">
-  <meta name="author" content="Abir Agarwal">
-  <meta name="keywords" content="TantraYantra, Abir Agarwal, independent technology studio, local-first software, privacy respecting software, DrishtiX">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 
-  <link rel="canonical" href="https://tantrayantra.github.io/tantrayantra-website/" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital,opsz@0,9..100;1,9..100&family=Space+Grotesk:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tantrayantra.github.io/tantrayantra-website/">
-  <meta property="og:title" content="TantraYantra — Independent Technology Studio">
-  <meta property="og:description" content="TantraYantra is an independent technology and product studio founded by Abir Agarwal. We build local-first, privacy-respecting software with dark editorial design, aurora systems, and on-device AI.">
-  <meta property="og:site_name" content="TantraYantra">
-  <meta property="og:image" content="https://tantrayantra.github.io/tantrayantra-website/assets/og-image.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@tantrayantra">
-  <meta name="twitter:title" content="TantraYantra — Independent Technology Studio">
-  <meta name="twitter:description" content="TantraYantra is an independent technology and product studio founded by Abir Agarwal.">
-
-  <style>
-    :root {
-      --bg: #050507;
-      --surface: #0a0a0d;
-      --text: #eaeaea;
-      --text-muted: #8a8a92;
-      --accent: #7c3aed;
-      --accent-glow: rgba(124, 58, 237, 0.35);
-      --border: rgba(255, 255, 255, 0.08);
-      --font-display: 'Space Grotesk', sans-serif;
-      --font-sans: 'DM Sans', sans-serif;
-      --font-serif: 'Instrument Serif', serif;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      font-size: 18px;
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* --- Aurora / Grid Background --- */
-    #canvas-container {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* --- Navigation --- */
-    .navbar {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      padding: 1.5rem 5vw;
-      display: flex; justify-content: space-between; align-items: center;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-brand {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-size: 0.9rem;
-      font-weight: 400;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-toggle { display: none; font-size: 1.5rem; color: var(--text); cursor: pointer; }
-
-    /* --- Sections --- */
-    .section { padding: 120px 5vw; position: relative; }
-
-    .section-dark {
-      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
-    }
-
-    .container { max-width: 1100px; margin: 0 auto; }
-
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.03em;
-      color: var(--text);
-    }
-
-    /* --- Hero --- */
-    #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; }
-
-    .hero-content { max-width: 700px; }
-
-    .hero-kicker {
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title .serif {
-      font-family: var(--font-serif);
-      font-weight: 700;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-      max-width: 60ch;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: var(--text);
-      color: var(--bg);
-      padding: 1rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .cta-button:hover { transform: translateY(-2px); background: var(--accent); color: #fff; }
-
-    .cta-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-      margin-left: 1rem;
-    }
-
-    .cta-outline:hover { background: rgba(255,255,255,0.05); }
-
-    /* --- Work Grid --- */
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .work-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-
-    .work-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-
-    .work-card-media {
-      width: 100%; height: 180px;
-      background: linear-gradient(135deg, #1a1a1e, #0f0f12);
-      border-radius: 8px; margin-bottom: 1.5rem;
-      border: 1px dashed var(--border);
-    }
-
-    .work-card-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-      color: var(--text);
-    }
-
-    .work-card-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .work-card-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    /* --- About --- */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-text p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.1rem; }
-
-    .about-stats { display: flex; flex-direction: column; gap: 2rem; }
-
-    .stat { text-align: right; }
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-    .stat-label { font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-display); }
-
-    /* --- Contact --- */
-    .contact-intro { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.1rem; }
-
-    .socials { display: flex; gap: 2rem; margin-top: 2rem; }
-    .socials a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-size: 0.9rem;
-    }
-    .socials a:hover { color: var(--text); }
-
-    /* --- Footer --- */
-    footer {
-      padding: 3rem 5vw;
-      border-top: 1px solid var(--border);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-family: var(--font-display);
-    }
-    .footer-grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* --- Responsive --- */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute; top: 100%; left: 0; width: 100%;
-        background: var(--surface);
-        flex-direction: column; padding: 2rem 5vw; gap: 1.5rem;
-        border-bottom: 1px solid var(--border);
-      }
-      .nav-links.active { display: flex; }
-      .nav-toggle { display: block; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .section { padding: 80px 5vw; }
-      .hero-title { font-size: 2.5rem; }
-    }
-  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TantraYantra",
+  "url": "https://tantrayantra.github.io/tantrayantra-website/",
+  "logo": "https://tantrayantra.github.io/tantrayantra-website/assets/tantrayantra-wordmark.png?v=2",
+  "description": "TantraYantra builds custom websites, applications, AI solutions and automation tools to solve real-world problems through technology.",
+  "sameAs": [
+    "https://github.com/TantraYantra",
+    "https://www.linkedin.com/company/tantrayantra",
+    "https://www.instagram.com/tantrayantra.official"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "TantraYantra | AI Solutions, Software & Web Development",
+  "url": "https://tantrayantra.github.io/tantrayantra-website/",
+  "description": "TantraYantra builds custom websites, applications, AI solutions and automation tools to solve real-world problems through technology.",
+  "isPartOf": {
+    "@type": "Website",
+    "name": "TantraYantra",
+    "url": "https://tantrayantra.github.io/tantrayantra-website/"
+  }
+}
+</script>
 </head>
 <body>
+<div class="aurora" aria-hidden="true">
+  <span class="aurora-a"></span>
+  <span class="aurora-b"></span>
+  <span class="aurora-c"></span>
+  <span class="grid-veil"></span>
+  <span class="grain"></span>
+</div>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-brand">TantraYantra</div>
-    <div class="nav-links">
-      <a href="#work">Work</a>
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="TantraYantra home">
+      <img class="brand-emblem" src="assets/tantrayantra-emblem.png?v=2" alt="" width="565" height="580" loading="lazy">
+      <img class="brand-wordmark" src="assets/tantrayantra-wordmark.png?v=2" alt="TantraYantra logo" title="TantraYantra — independent studio" width="1392" height="179" loading="lazy">
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
       <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#work">Work</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO (studio) -->
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="pulse"></span> CUSTOM SOFTWARE &amp; AI SOLUTIONS</div>
+
+      <h1>TantraYantra —<br> <em>Ideas into impact.</em></h1>
+
+      <p class="lead">
+        TantraYantra is an independent studio that builds custom software, web
+        applications, desktop applications and AI solutions. We help businesses
+        and individuals solve real-world problems with technology — from machine
+        learning solutions and business automation to digital product
+        development. Everything we ship is local-first, privacy-respecting and
+        built to last.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#work">
+          Explore our work
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/TantraYantra" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.5v-2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.5 10.5 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5A11.3 11.3 0 0 0 12 .7Z"/></svg>
+          Explore our GitHub
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <span>Independent studio</span>
+        <span>Local-first by default</span>
+        <span>Open source</span>
+      </div>
     </div>
-    <div class="nav-toggle" aria-label="Menu">☰</div>
-  </nav>
 
-  <!-- 3D Canvas Background Placeholder (Three.js can be added later) -->
-  <div id="canvas-container"></div>
-
-  <!-- Main Content -->
-  <main>
-    <section id="hero" class="section">
-      <div class="hero-content">
-        <span class="hero-kicker">Independent Technology Studio</span>
-        <h1 class="hero-title">
-          <span class="serif">Tantra</span>Yantra
-        </h1>
-        <p class="hero-subtitle">Founded by Abir Agarwal. Building local-first, privacy-respecting software. Dark editorial design. Aurora systems.</p>
-        <a href="#work" class="cta-button">Explore Work</a>
-        <a href="#about" class="cta-button cta-outline">About the Founder</a>
+    <div class="hero-art">
+      <div class="studio-mark">
+        <div class="studio-mark-shape"></div>
+        <div class="studio-note">Building what matters.</div>
       </div>
-    </section>
-
-    <section id="work" class="section section-dark">
-      <div class="container">
-        <h2 class="section-title serif">Selected Work</h2>
-        <div class="work-grid">
-          <article class="work-card">
-            <div class="work-card-media"></div>
-            <div class="work-card-info">
-              <h3 class="work-card-title">DrishtiX</h3>
-              <p class="work-card-desc">Local-first photo library with on-device face recognition. Windows desktop app by TantraYantra.</p>
-              <a href="#" class="work-card-link">View Case Study →</a>
-            </div>
-          </article>
-          <article class="work-card">
-            <div class="work-card-media"></div>
-            <div class="work-card-info">
-              <h3 class="work-card-title">Next Product</h3>
-              <p class="work-card-desc">In development. A new TantraYantra product.</p>
-              <a href="#" class="work-card-link">Coming Soon →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container about-grid">
-        <div class="about-text">
-          <h2 class="section-title serif">About TantraYantra</h2>
-          <p>TantraYantra is an independent technology and product studio founded by <strong>Abir Agarwal</strong>. We build software that respects the user's device, data, and attention—no unnecessary cloud dependencies, no dark patterns.</p>
-          <p>Our design system is rooted in dark editorial aesthetics: aurora backgrounds, grid structures, and a typographic voice combining Space Grotesk, DM Sans, and Instrument Serif.</p>
-          <p>Currently shipping <strong>DrishtiX</strong>, a free local-first photo library for Windows. More products in development.</p>
-        </div>
-        <div class="about-stats">
-          <div class="stat">
-            <div class="stat-number">1</div>
-            <div class="stat-label">Product in market</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Telemetry trackers</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Local-first</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-dark">
-      <div class="container">
-        <h2 class="section-title serif">Get in Touch</h2>
-        <p class="contact-intro">TantraYantra is available for select projects and collaborations.</p>
-        <a href="mailto:hello@tantrayantra.github.io" class="cta-button cta-outline">hello@tantrayantra.com</a>
-        <div class="socials">
-          <a href="https://github.com/TantraYantra" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-          <a href="https://twitter.com/tantrayantra" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-grid">
-      <div>&copy; 2026 TantraYantra. All rights reserved.</div>
-      <div>Founded by Abir Agarwal · Hosted on GitHub Pages</div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    // Mobile nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => links.classList.toggle('active'));
-  </script>
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <div class="section-head">
+      <div class="label">01 — WHO WE ARE</div>
+      <h2>Technology should<br> <em>move people forward.</em></h2>
+    </div>
 
-  <!-- Structured Data for SEO & AI Overviews -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://tantrayantra.github.io/tantrayantra-website/#organization",
-        "name": "TantraYantra",
-        "url": "https://tantrayantra.github.io/tantrayantra-website/",
-        "description": "Independent technology and product studio building local-first, privacy-respecting software.",
-        "founder": {
-          "@id": "https://tantrayantra.github.io/tantrayantra-website/#founder"
-        },
-        "sameAs": [
-          "https://github.com/TantraYantra",
-          "https://twitter.com/tantrayantra",
-          "https://linkedin.com/company/tantrayantra"
-        ],
-        "logo": "https://tantrayantra.github.io/tantrayantra-website/assets/logo.png"
-      },
-      {
-        "@type": "Person",
-        "@id": "https://tantrayantra.github.io/tantrayantra-website/#founder",
-        "name": "Abir Agarwal",
-        "jobTitle": "Founder",
-        "worksFor": {
-          "@id": "https://tantrayantra.github.io/tantrayantra-website/#organization"
-        },
-        "url": "https://tantrayantra.github.io/tantrayantra-website/#founder",
-        "sameAs": [
-          "https://github.com/TantraYantra",
-          "https://linkedin.com/in/abir-agarwal",
-          "https://twitter.com/tantrayantra"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://tantrayantra.github.io/tantrayantra-website/#website",
-        "url": "https://tantrayantra.github.io/tantrayantra-website/",
-        "name": "TantraYantra",
-        "publisher": {
-          "@id": "https://tantrayantra.github.io/tantrayantra-website/#organization"
-        },
-        "inLanguage": "en"
-      }
-    ]
-  }
-  </script>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p class="about-lead">
+          TantraYantra is an independent studio focused on custom software
+          development, AI solutions and digital product development.
+        </p>
+        <p>
+          We build web applications, desktop applications, mobile app
+          prototypes and machine learning solutions that solve real problems.
+          Our work spans business automation, web development and
+          privacy-respecting software — one product at a time. We value
+          reliability, accessibility and the details that earn people's trust.
+        </p>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat"><b>01</b><span>Studio</span></div>
+        <div class="stat"><b>100%</b><span>Independent</span></div>
+        <div class="stat"><b>0</b><span>Outside investors</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="vision-section" id="approach">
+    <div class="vision-inner">
+      <div class="label">02 — HOW WE BUILD</div>
+      <div class="vision-title">
+        <small>INNOVATING TOMORROW TOGETHER</small>
+        <h2>Build with purpose.<br> <em>Improve with every iteration.</em></h2>
+      </div>
+
+      <div class="vision-grid">
+        <article class="vision-card">
+          <b>01</b>
+          <h3>Custom Software Development</h3>
+          <p>We build web applications, desktop applications and digital products tailored to real needs — clear, considered and genuinely useful.</p>
+        </article>
+        <article class="vision-card">
+          <b>02</b>
+          <h3>AI & Machine Learning Solutions</h3>
+          <p>On-device AI, face recognition and automation tools that run locally, keeping data private and under your control.</p>
+        </article>
+        <article class="vision-card">
+          <b>03</b>
+          <h3>Business Automation & Digital Products</h3>
+          <p>From workflow automation to full digital product development, we ship reliable software built to last.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / PRODUCTS -->
+  <section class="section products-section" id="work">
+    <div class="section-head">
+      <div class="label">03 — WHAT WE'RE BUILDING</div>
+      <h2>Our Products.<br> <em>Live.</em></h2>
+    </div>
+
+    <p class="work-lead">
+      We develop custom software, web applications, desktop applications,
+      mobile app prototypes, AI solutions and business automation tools.
+      Everything we ship is local-first, open source and built to last.
+    </p>
+
+    <div class="work-grid">
+      <article class="work-card card-wide">
+        <div class="work-mark">D</div>
+        <h3>DrishtiX — Private Photo Library</h3>
+        <p>
+          A free, open-source photo library for Windows with on-device face
+          recognition. Organize your photos and videos locally — no uploads,
+          no account, no telemetry.
+        </p>
+        <a class="btn btn-primary btn-lg" href="https://github.com/TantraYantra/drishtix/releases/latest/download/DrishtiX-Setup.exe" style="margin-top:18px;display:inline-block">
+          Download DrishtiX (Windows)
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+        <p style="margin-top:14px;font-size:.88rem;color:var(--dim)">
+          Direct download • Windows 11 x64 • MIT licensed
+        </p>
+      </article>
+      <article class="work-card">
+        <div class="work-mark">●</div>
+        <h3>Custom Software Development</h3>
+        <p>Web applications, desktop applications and digital products built to your requirements.</p>
+      </article>
+      <article class="work-card">
+        <div class="work-mark">●</div>
+        <h3>AI & Machine Learning Solutions</h3>
+        <p>On-device AI and machine learning tools that keep data private and local.</p>
+      </article>
+      <article class="work-card">
+        <div class="work-mark">●</div>
+        <h3>Business Automation</h3>
+        <p>Automation tools that streamline workflows without compromising privacy.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- GET DRISHTIX -->
+  <section class="section download-section" id="download">
+    <div class="wrap">
+      <div class="section-head" style="max-width:760px">
+        <div class="label">GET DRISHTIX</div>
+        <h2>Download &amp; install<br> <em>Windows 11 x64.</em></h2>
+      </div>
+
+      <div class="bento" style="grid-template-columns:repeat(3,1fr);gap:20px">
+        <article class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg>
+          </div>
+          <h3>1. Download</h3>
+          <p>Click <strong>Download DrishtiX (Windows)</strong> above to get <code>DrishtiX-Setup.exe</strong> (≈88 MB).</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+          </div>
+          <h3>2. Run installer</h3>
+          <p>Double-click <code>DrishtiX-Setup.exe</code>. Installs per-user — no admin rights needed.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>3. Launch app</h3>
+          <p>DrishtiX appears in your Start Menu and on the Desktop. Open it and your library is ready.</p>
+        </article>
+      </div>
+
+      <div class="smartscreen" style="margin-top:40px;padding:30px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.03)">
+        <div class="label" style="margin-bottom:12px">IMPORTANT — WINDOWS SMARTSCREEN</div>
+        <h3 style="margin:0 0 10px">Windows may block the installer — here's what to do</h3>
+        <p style="color:var(--muted);margin:0 0 10px">
+          DrishtiX is an independent, open-source project. The installer is not yet
+          code-signed, so Windows SmartScreen may show a warning. This is expected
+          and does not mean the file is unsafe.
+        </p>
+        <ol style="color:var(--muted);line-height:1.8;margin:0 0 10px;padding-left:20px">
+          <li>Click <strong>"More info"</strong> (or "More options") on the warning dialog.</li>
+          <li>Click <strong>"Run anyway"</strong> at the bottom.</li>
+          <li>The installer will launch normally.</li>
+        </ol>
+        <p style="color:var(--dim);font-size:.9rem;margin:0">
+          Optional: verify the file hash against <code>SHA256SUMS.txt</code> on the
+          <a href="https://github.com/TantraYantra/drishtix/releases" target="_blank" rel="noreferrer" style="color:var(--cyan)">GitHub release page</a>.
+        </p>
+      </div>
+
+      <div class="how-to-use" style="margin-top:40px">
+        <div class="label" style="margin-bottom:12px">HOW TO USE</div>
+        <h3 style="margin:0 0 16px">Your photos, your way</h3>
+        <div class="showcase" style="grid-template-columns:1fr 1fr;gap:32px">
+          <div>
+            <h4 style="margin:0 0 6px">1. Add your photos</h4>
+            <p style="color:var(--muted);font-size:.95rem;margin:0 0 12px">
+              Open DrishtiX and scan any folder. Your original files are never moved or deleted.
+            </p>
+            <h4 style="margin:0 0 6px">2. Faces grouped automatically</h4>
+            <p style="color:var(--muted);font-size:.95rem;margin:0 0 12px">
+              On-device face recognition detects faces. Name each person, confirm or merge matches.
+            </p>
+            <h4 style="margin:0 0 6px">3. Everything stays local</h4>
+            <p style="color:var(--muted);font-size:.95rem;margin:0 0 12px">
+              No uploads, no account, no telemetry. All processing happens on your computer.
+            </p>
+          </div>
+          <div style="display:grid;place-items:center">
+            <div class="panel" style="max-width:400px">
+              <div class="panel-head"><b>QUICK START</b><span class="panel-badge">LOCAL-FIRST</span></div>
+              <div style="margin-top:14px">
+                <div class="match" style="margin-bottom:8px">
+                  <div class="face" style="--fa:linear-gradient(150deg,#0f766e,#134e4a)"></div>
+                  <div class="match-info"><strong>Scan folder</strong><small style="color:var(--dim)">Select any photo directory</small></div>
+                </div>
+                <div class="match" style="margin-bottom:8px">
+                  <div class="face" style="--fa:linear-gradient(150deg,#3730a3,#312e81)"></div>
+                  <div class="match-info"><strong>Name people</strong><small style="color:var(--dim)">Create profiles for faces found</small></div>
+                </div>
+                <div class="match" style="margin-bottom:8px">
+                  <div class="face" style="--fa:linear-gradient(150deg,#166534,#14532d)"></div>
+                  <div class="match-info"><strong>Browse library</strong><small style="color:var(--dim)">View photos by person or date</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--line)">
+          <p style="color:var(--dim);font-size:.9rem;margin:0">
+            <strong>Library location:</strong> <code>%LOCALAPPDATA%\TantraYantra\DrishtiX\</code>
+            <br>Your database and settings are stored here — back it up like any other folder.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="privacy-section" id="privacy">
+    <div class="privacy-inner">
+      <div class="label">04 — OUR PRINCIPLE</div>
+      <h2>Local-first is a principle,<br> <em>not a feature.</em></h2>
+      <p class="privacy-lead">
+        We build products that respect the people who use them. That starts with
+        keeping personal data on the device and designing every workflow so it
+        works without an account.
+      </p>
+
+      <div class="privacy-grid">
+        <div class="privacy-card">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="3"/><path d="M8 21h8M12 17v4"/></svg>
+          <h3>On-device by default</h3>
+          <p>Computation happens on your hardware — not in a data centre.</p>
+        </div>
+        <div class="privacy-card">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+          <h3>No telemetry</h3>
+          <p>No analytics, no tracking pixels, no usage reporting. Nothing to opt out of.</p>
+        </div>
+        <div class="privacy-card">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+          <h3>Yours to keep</h3>
+          <p>Your data is one folder you can copy, back up, or take with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section" id="faq">
+    <div class="faq-head">
+      <div class="label">05 — QUESTIONS</div>
+      <h2>About us.<br> <em>And our work.</em></h2>
+      <aside class="faq-aside">
+        <h3>Still curious?</h3>
+        <p>Open an issue on GitHub and we'll take a look.</p>
+        <a href="https://github.com/TantraYantra" target="_blank" rel="noreferrer">Visit our organisation <span>↗</span></a>
+      </aside>
+    </div>
+
+    <div class="faq-list">
+      <details>
+        <summary>How can I work with TantraYantra?<span class="faq-plus"></span></summary>
+        <div class="faq-body"><p>Open an issue on GitHub or start a discussion in our organisation. We welcome project inquiries, collaborations and focused contributions to our public repositories.</p></div>
+      </details>
+      <details>
+        <summary>What services do you offer?<span class="faq-plus"></span></summary>
+        <div class="faq-body"><p>Custom software development, web applications, desktop applications, AI and machine learning solutions, mobile app prototypes and business automation tools. Everything is built local-first and privacy-respecting.</p></div>
+      </details>
+      <details>
+        <summary>What is TantraYantra?<span class="faq-plus"></span></summary>
+        <div class="faq-body"><p>TantraYantra is an independent studio that builds custom software, web applications, desktop applications and AI solutions. We turn ideas into practical digital experiences, with a focus on privacy, thoughtful design, and software that is genuinely useful.</p></div>
+      </details>
+      <details>
+        <summary>Is TantraYantra a company?<span class="faq-plus"></span></summary>
+        <div class="faq-body"><p>TantraYantra operates as an independent studio. There are no outside investors and no outside pressure on what we build or how we build it.</p></div>
+      </details>
+      <details>
+        <summary>Where can I find your software?<span class="faq-plus"></span></summary>
+        <div class="faq-body"><p>All public repositories are hosted under the <a href="https://github.com/TantraYantra" target="_blank" rel="noreferrer">TantraYantra GitHub organisation</a>. Everything is open source.</p></div>
+      </details>
+      <details>
+        <summary>Do you collect user data?<span class="faq-plus"></span></summary>
+        <div class="faq-body"><p>No. Any software released under TantraYantra is designed to run locally on your device. There is no telemetry, no cloud sync, and no account required.</p></div>
+      </details>
+      <details>
+        <summary>Can I contribute or collaborate?<span class="faq-plus"></span></summary>
+        <div class="faq-body"><p>Yes. Bug reports, feature discussions, and focused pull requests are welcome in our public repositories.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-copy">
+        <div class="label">06 — START A CONVERSATION</div>
+        <h2>Have an idea?<br> <em>Let's build.</em></h2>
+        <p>
+          We build custom software, web applications, desktop applications,
+          AI solutions and business automation tools. If you have a project in
+          mind, we'd love to hear from you.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/TantraYantra" target="_blank" rel="noreferrer">Connect on GitHub ↗</a>
+          <a class="btn btn-ghost" href="https://github.com/TantraYantra" target="_blank" rel="noreferrer">Open a discussion</a>
+        </div>
+        <div class="social-links" style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://github.com/TantraYantra" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/company/tantrayantra" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://www.instagram.com/tantrayantra.official" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a>
+        </div>
+      </div>
+
+      <aside class="contact-product">
+        <div class="contact-product-head"><span>OUR STUDIO</span><span class="path-dot"></span></div>
+        <img src="assets/tantrayantra-wordmark.png?v=2" alt="TantraYantra logo" title="TantraYantra — independent studio" width="1392" height="179" loading="lazy">
+        <h3>TantraYantra</h3>
+        <p>An independent studio building custom software, AI solutions and digital products.</p>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="#top" aria-label="TantraYantra home">
+        <img class="brand-emblem" src="assets/tantrayantra-emblem.png?v=2" alt="" width="565" height="580" loading="lazy">
+        <img class="brand-wordmark" src="assets/tantrayantra-wordmark.png?v=2" alt="TantraYantra logo" title="TantraYantra — independent studio" width="1392" height="179" loading="lazy">
+      </a>
+      <p>An independent studio building custom software, AI solutions and digital products.</p>
+      <small class="footer-motto">Innovating Tomorrow Together.</small>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h3>Studio</h3>
+        <a href="#about">About</a>
+        <a href="#approach">Approach</a>
+        <a href="#work">Work</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h3>DrishtiX</h3>
+        <a href="#download">Download</a>
+        <a href="https://github.com/TantraYantra/drishtix" target="_blank" rel="noreferrer">GitHub repository</a>
+        <a href="https://github.com/TantraYantra/drishtix/releases" target="_blank" rel="noreferrer">Releases</a>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <a href="https://github.com/TantraYantra" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/company/tantrayantra" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/tantrayantra.official" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="https://github.com/TantraYantra/drishtix/blob/main/LICENSE" target="_blank" rel="noreferrer">MIT License</a>
+        <a href="https://github.com/TantraYantra/drishtix/blob/main/NOTICE" target="_blank" rel="noreferrer">Model Attribution</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <small>© <span id="year">2026</span> TantraYantra. Built with intent.</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
